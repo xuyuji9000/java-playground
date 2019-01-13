@@ -7,6 +7,14 @@ buildscript {
     }
 }
 
+plugins {
+  id 'net.saliman.cobertura' version '2.6.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -18,14 +26,11 @@ bootJar {
     version =  '0.1.0'
 }
 
-repositories {
-    mavenCentral()
-}
-
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    compile("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
 }
