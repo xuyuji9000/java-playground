@@ -52,7 +52,9 @@ pipeline {
     stage('JaCoCo') {
       steps {
         echo 'Code Coverage'
-        jacoco()
+        jacoco(
+          minimumInstructionCoverage: '70'
+        )
       }
     }
 
