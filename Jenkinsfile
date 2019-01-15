@@ -53,7 +53,7 @@ pipeline {
       steps {
         echo 'Code Coverage'
         jacoco(
-          minimumInstructionCoverage: '70'
+          minimumLineCoverage : '42'
         )
       }
     }
