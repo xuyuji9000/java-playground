@@ -49,6 +49,13 @@ pipeline {
       }
     }
 
+    stage('JaCoCo') {
+      steps {
+        echo 'Code Coverage'
+        jacoco()
+      }
+    }
+
     // stage("Deploy") {
     //   environment {
     //     AWS_ID = credentials("aws-iam-user-for-pipeline")
