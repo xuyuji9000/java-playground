@@ -54,7 +54,8 @@ pipeline {
         echo 'Code Coverage'
         jacoco(
           minimumLineCoverage : '42',
-          maximumLineCoverage: '100'
+          maximumLineCoverage: '100',
+          changeBuildStatus: true
         )
       }
     }
