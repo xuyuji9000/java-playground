@@ -43,11 +43,7 @@ pipeline {
       steps {
         script {
           sh '''
-          node --version
-          pwd
-          ls -lat
-          npm install
-          npm run-script build
+          ./gradlew build
           '''
         }
       }
