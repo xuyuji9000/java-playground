@@ -60,13 +60,19 @@ pipeline {
       }
     }
 
-    // stage('OWASP Dependency Check') {
-    //   steps {
-    //     sh './gradlew dependencyCheckAnalyze --info'
-    //     dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
-    //     // dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
-    //   }
-    // }
+    stage('OWASP Dependency Check') {
+      steps {
+        sh './gradlew dependencyCheckAnalyze --info'
+        // dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
+        // dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
+      }
+    }
+
+    post {
+        always {
+            dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
+        }
+    }
 
     // stage("Deploy") {
     //   environment {
