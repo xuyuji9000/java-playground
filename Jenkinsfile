@@ -49,7 +49,7 @@ pipeline {
       }
     }
 
-    stage('JaCoCo') {
+    stage('Test Coverage') {
       steps {
         echo 'Code Coverage'
         jacoco(
@@ -57,6 +57,12 @@ pipeline {
           maximumLineCoverage: '100',
           changeBuildStatus: true
         )
+      }
+    }
+
+    stage('OWASP Dependency Check') {
+      steps {
+        sh './gradlew dependencyCheckAnalyze'
       }
     }
 
