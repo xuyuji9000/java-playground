@@ -53,7 +53,7 @@ pipeline {
       steps {
         echo 'Code Coverage'
         jacoco(
-          minimumLineCoverage : '42',
+          minimumLineCoverage : '41',
           maximumLineCoverage: '100',
           changeBuildStatus: true
         )
@@ -62,8 +62,10 @@ pipeline {
 
     stage('OWASP Dependency Check') {
       steps {
-        sh './gradlew dependencyCheckAnalyze'
+        sh './gradlew dependencyCheckAnalyze --info'
       }
+      dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
+
     }
 
     // stage("Deploy") {
