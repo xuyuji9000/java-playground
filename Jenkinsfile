@@ -68,12 +68,6 @@ pipeline {
       }
     }
 
-    post {
-        always {
-            dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
-        }
-    }
-
     // stage("Deploy") {
     //   environment {
     //     AWS_ID = credentials("aws-iam-user-for-pipeline")
@@ -92,5 +86,11 @@ pipeline {
     //     }
     //   }
     // }
+  }
+
+  post {
+    always {
+      dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
+    }
   }
 }
