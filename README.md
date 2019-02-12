@@ -6,3 +6,6 @@
 2. [Integrating OWASP Dependency Check in to development process
 ](https://blog.gypsyengineer.com/en/security/integrating-owasp-dependency-check.html)
 
+3. [OWASP Dependency-Check Plugin
+](https://jenkins.io/doc/pipeline/steps/dependency-check-jenkins-plugin/)
+
