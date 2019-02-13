@@ -9,3 +9,4 @@
 3. [OWASP Dependency-Check Plugin
 ](https://jenkins.io/doc/pipeline/steps/dependency-check-jenkins-plugin/)
 
+4. [Suppressing False Positives](https://jeremylong.github.io/DependencyCheck/general/suppression.html)
