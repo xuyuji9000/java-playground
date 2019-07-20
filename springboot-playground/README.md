@@ -1,9 +1,16 @@
+- Create new gradle build:
+
+``` bash
+rm -fr ./build
+./gradlew build
+```
+
 - Build Dokcer image:
 
 ```bash
 docker build \
 --build-arg JAR_FILE=./build/libs/gs-spring-boot-0.1.0.jar \
--t gradle-playground .
+-t springboot-playground .
 ```
 
 - Run container:
@@ -11,7 +18,7 @@ docker build \
 ``` bash
 docker run --rm \
 -p 8080:8080 \
-gradle-playground
+springboot-playground
 ```
 
 # Reference
