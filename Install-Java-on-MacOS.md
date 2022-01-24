@@ -1,6 +1,6 @@
 # Introduction
 
-This file document the steps about "How to install Java 17 on macOS"
+This file document the steps about "How to install Java 11 on macOS"
 
 
 # Steps
@@ -14,7 +14,7 @@ This file document the steps about "How to install Java 17 on macOS"
 2. Link
 
     ``` shell
-    sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+    sudo ln -sfn /usr/local/opt/openjdk\@11/libexec/openjdk.jdk/ /Library/Java/JavaVirtualMachines/openjdk.jdk
     ```
     > Need to link manually, cause openjdk is [keg-only](https://docs.brew.sh/FAQ#what-does-keg-only-mean)
 
@@ -23,9 +23,12 @@ This file document the steps about "How to install Java 17 on macOS"
 3. Set environment variable `JAVA_HOME` in startup script `~/.bash_profile`
 
     ``` shell
+    # ~/.bash_profile
     # java home
-    export JAVA_HOME=`/usr/libexec/java_home -v17`
+    export JAVA_HOME=`/usr/libexec/java_home -v11`
     ```
+
+    > `source ~/.bash_profile`
 
 # Reference
 
