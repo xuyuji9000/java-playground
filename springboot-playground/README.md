@@ -1,29 +1,9 @@
-- Create new gradle build:
+This folder contains the learning about SpringBoot framework.
 
-``` bash
-rm -fr ./build
-./gradlew build
-```
+# Examples
 
-- Build Dokcer image:
+Examples are organized under different years, so the cognitive load is lower.
 
-```bash
-docker build \
---build-arg JAR_FILE=./build/libs/gs-spring-boot-0.1.0.jar \
--t springboot-playground .
-```
+- [2019](2019/Readme.md)
 
-- Run container:
-
-``` bash
-docker run --rm \
--p 8080:8080 \
-springboot-playground
-```
-
-- Push to docker hub
-
-``` bash
-docker tag springboot-playground yogiman/springboot-playground
-docker push yogiman/springboot-playground
-```
+- [2022](2022/Readme.md)
