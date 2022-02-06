@@ -16,3 +16,14 @@ This folder contains a SpringBoot example done on 2022.
 
    > `curl localhost:8080`
 
+3. Build jar file 
+
+``` shell
+./gradlew build
+```
+
+4. Run jar file 
+
+``` shell
+java -jar ./build/libs/demo-0.0.1-SNAPSHOT.jar
+```
